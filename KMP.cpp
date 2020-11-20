@@ -1,5 +1,7 @@
+#include"StringSearch.h"
+
 //fills an array with a longest possible prefix/ suffix for a given pattern
-void getLPS(){
+void Search::getLPS(){
 
     //set length to 0
 
@@ -15,7 +17,10 @@ void getLPS(){
                 //catch edge
 }
 
-void KMP(){
+std::vector<int> Search::KMP(std::string wordInText, std::string text){
+    std::vector<int> temp;
+    temp.push_back(1);
+    return temp;
 
     //create a longest possible pre/suffix array the side of the pattern
     //call getLPS

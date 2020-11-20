@@ -1,11 +1,16 @@
+#include <iostream> //may not need
+#include <string>
+#include <vector>
+
 class Search{
 
     private:
 
-        //pattern we're looking for
-        //string we're taking in
+        std::string wordInText;
+        std::string text;
 
     public:
-
-        //constructor
+        std::vector<int> KMP(std::string wordInText, std::string text);
+        void getLPS();//check if this is private
+        std::vector<int> BM(std::string wordInText, std::string text);
 };
