@@ -11,6 +11,6 @@ class Search{
 
     public:
         std::vector<int> KMP(std::string wordInText, std::string text);
-        void getLPS();//check if this is private
+        void getLPS(std::vector<int> &lpsVec, std::string wordInText);
         std::vector<int> BM(std::string wordInText, std::string text);
 };

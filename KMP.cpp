@@ -1,29 +1,44 @@
 #include"StringSearch.h"
 
 //fills an array with a longest possible prefix/ suffix for a given pattern
-void Search::getLPS(){
+void Search::getLPS(std::vector<int> &lpsVec, std::string wordInText){
 
-    //set length to 0
+    int i = 0;  //to keep track of the positions of lpsVec and compare them
+    int j = 1;
 
-    //probably while i < some value j (j being the pattern we'll take in as a param)
-        //if pattern[i] = pattern[length]
-            //increment length
-            //append length
-            //increase i
-        //else
-            //if the legth isn't empty
-                //set length to last element of the array
-            //else
-                //catch edge
+    lpsVec[0] = 0;
+    //std::cout<<lpsVec.size();
+    while(j != lpsVec.size()){
+        if(wordInText[i] != wordInText[j]){
+            if(i == 0){
+                lpsVec[j] = 0;
+                j++;
+            }
+            else{
+                i = lpsVec[i - 1];
+            }
+        }
+
+        else if(wordInText[i] == wordInText[j]){
+            lpsVec[j] = i + 1;
+            i++;
+            j++;
+        }
+
+    }
+    return;
 }
 
 std::vector<int> Search::KMP(std::string wordInText, std::string text){
-    std::vector<int> temp;
-    temp.push_back(1);
-    return temp;
 
-    //create a longest possible pre/suffix array the side of the pattern
-    //call getLPS
+    std::vector<int> lpsVec(wordInText.size());
+
+    std::vector<int>positions;
+
+    getLPS(lpsVec,wordInText);
+
+    return lpsVec;
+
 
     //set index i for text iteration
     //set index j for pattern iteration

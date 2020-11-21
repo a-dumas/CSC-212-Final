@@ -5,6 +5,8 @@ int main(){
     std::string word = "this";
 
     Search obj;
-    std::vector<int> ah = obj.KMP(word,text);
-    std::cout<<ah[0]<<"\n";
+    std::vector<int> print = obj.KMP(word,text);
+    for (int i = 0; i < print.size(); i++) {
+        std::cout<<print[i]<<" ";
+    }
 }
