@@ -48,7 +48,6 @@ void Search::KMP(std::string wordInText, std::string text,int i, int j, std::vec
         j++;
         if(j == wordInText.size()){
             positions.push_back(i - j);
-            std::cout<<(i - j)<<" ";
             j = 0;
         }
         KMP(wordInText,text,i,j,positions,lpsVec);
