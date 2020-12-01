@@ -1,11 +1,11 @@
 #include "StringSearch.h"
 
 int main(){
-    std::string text = "this is a this thing this bye";
-    std::string word = "bye";
+    std::string text = "this is a thisthisthis thing";
+    std::string word = "this";
 
     Search obj;
-    std::vector<int> print = obj.KMPHelper(word,text);
+    std::vector<int> print = obj.KMP(word,text);
 
     if(print.size() == 0){
         std::cout<<"'"<<word<<"' was not found in the text";
