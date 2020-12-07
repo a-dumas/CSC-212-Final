@@ -5,7 +5,8 @@ int main(){
     std::string word = "this";
 
     Search obj;
-    std::vector<int> print = obj.KMP(word,text);
+    //std::vector<int> print = obj.KMP(word,text);
+   std::vector<int> print = obj.BM(word,text);
 
     if(print.size() == 0){
         std::cout<<"'"<<word<<"' was not found in the text";
