@@ -30,12 +30,12 @@ int Search::badChar(int j, char temp, std::string WordInText){ //we're only comp
     return j - index;
 }
 
-void Search::BM(std::string wordInText, std::string text){
+std::vector<int> Search::BM(std::string wordInText, std::string text){
     std::vector<int> positions;
     int mismatch = 0;
 
     if(text.length() < wordInText.length()){
-        return;
+        return positions;
     }
 
     int i = wordInText.length() - 1; //begin match from the end

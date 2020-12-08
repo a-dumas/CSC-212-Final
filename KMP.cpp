@@ -26,7 +26,7 @@ void Search::getLPS(std::vector<int> &lpsVec, std::string wordInText){
     }
     return;
 }
-std::vector<int> Search::KMP(std::string wordInText, std::string text){
+std::vector<int> Search::KMP(std::string wordInText, std::string text,std::string linearOrRecursive){
     std::vector<int> lpsVec(wordInText.size());
 
     std::vector<int>positions;
@@ -36,7 +36,12 @@ std::vector<int> Search::KMP(std::string wordInText, std::string text){
     int i = 0;      //index i of text
     int j = 0;      //index j of wordInText
 
-    KMPRecursive(wordInText,text,i,j,positions,lpsVec);
+    if(linearOrRecursive == "1"){
+        KMPLinear(wordInText,text,i,j,positions,lpsVec);
+    }
+    if(linearOrRecursive == "2"){
+        KMPRecursive(wordInText,text,i,j,positions,lpsVec);
+    }
     return positions;
 }
 void Search::KMPRecursive(std::string wordInText, std::string text,int i, int j, std::vector<int> &positions, std::vector<int> lpsVec){
@@ -60,5 +65,25 @@ void Search::KMPRecursive(std::string wordInText, std::string text,int i, int j,
             KMPRecursive(wordInText,text,i + 1,j,positions,lpsVec);
         }
 
+    }
+}
+void Search::KMPLinear(std::string wordInText, std::string text,int i, int j, std::vector<int> &positions, std::vector<int> lpsVec){
+    while (i < text.size()) {
+        if (wordInText[j] == text[i]) {
+            j++;
+            i++;
+        }
+
+        if (j == wordInText.size()) {
+            positions.push_back(i - j);
+            j = lpsVec[j - 1];
+        }
+
+        else if (i < text.size() && wordInText[j] != text[i]) {
+            if (j != 0)
+                j = lpsVec[j - 1];
+            else
+                i = i + 1;
+        }
     }
 }
