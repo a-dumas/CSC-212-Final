@@ -28,6 +28,9 @@ int main(){
         }
 
         while (std::getline(inFile,temp)) {
+            for (int i = 0; i < temp.size(); i++) {
+                temp[i] = tolower(temp[i]);             //convert to lowercase to make search easier
+            }
             text.append(temp);
             temp.clear();
         }
@@ -37,12 +40,15 @@ int main(){
 
     else if(oneOrTwo == "2"){
         std::cout<<"Enter plain text:\n";
-        std::getline(std::cin,text); //why isnt this working?!??!?!?!?!?
-        std::cout<<text;
+        std::cin.ignore();
+        std::getline(std::cin,text);
     }
     std::cout<<"Great! Now enter the word you would like to search for:\n";
     std::string word;
     std::cin>>word;
+    for (int i = 0; i < word.size(); i++) {
+        word[i] = tolower(word[i]);                     //convert to lowercase to make search easier
+    }
 
     std::cout<<"Awesome! Enter '1' for the Knuth–Morris–Pratt algorithm and '2' for Boyer-Moore algorithm\n";
     std::cin>>oneOrTwo;
