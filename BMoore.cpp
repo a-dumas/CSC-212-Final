@@ -33,7 +33,7 @@ std::vector<int> Search::goodSuffix(std::string wordInText, std::vector<int> &sh
     }
 
     j = borderTable[0];
-    for (i = o; i <= wordInText.length(); i++) {
+    for (i = 0; i <= wordInText.length(); i++) {
         // if the shift has not been set yet
         if (shiftTable[i] == 0) {
             shiftTable[i] = j;
