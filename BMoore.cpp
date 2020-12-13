@@ -1,9 +1,9 @@
+
 #include "StringSearch.h"
-
-
+#include <algorithm>
 
 // get the shift for good suffix rule
-std::vector<int> Search::goodSuffix(std::string wordInText, std::vector<int> &shiftTable, std::vector<int> &borderTable) {
+void Search::goodSuffix(std::string wordInText, std::vector<int>& shiftTable, std::vector<int>& borderTable) {
     int i = wordInText.length();
     int j = wordInText.length() + 1;
 
@@ -16,8 +16,8 @@ std::vector<int> Search::goodSuffix(std::string wordInText, std::vector<int> &sh
 
     while (i > 0) {
         // if the current character at pos i-1 is not a match to the character at j-1, search the rightmost position on the border table
-        while (j <= wordInText.length() && wordInText[i - j] != wordInText[j - 1]) {
-            // shift the shift the pattern from i to j
+        while (j <= wordInText.length() && wordInText[i - 1] != wordInText[j - 1]) {
+            // shift the pattern from i to j
             if (shiftTable[j] == 0) {
                 shiftTable[j] = j - i;
             }
@@ -36,7 +36,7 @@ std::vector<int> Search::goodSuffix(std::string wordInText, std::vector<int> &sh
     for (i = 0; i <= wordInText.length(); i++) {
         // if the shift has not been set yet
         if (shiftTable[i] == 0) {
-            shiftTable[i] = j;
+            shiftTable[i] = j; // set the border to the current position
         }
 
         if (i == j) {
@@ -55,7 +55,7 @@ std::vector<int> Search::badChar(std::string wordInText) { //we're only comparin
         badCharTable.push_back(-1); // filling the table with negative values that will be replaced later
     }
     for (int i = 0; i < wordInText.length(); i++) {
-        badCharTable[(int)wordInText[i]] = i; // pushing the last occurance of a particular character in the patterm
+        badCharTable[(int)wordInText[i]] = i; // pushing the last occurance of a particular character in the patterm 
     }
 
     return badCharTable;
@@ -104,6 +104,5 @@ std::vector<int> Search::BM(std::string wordInText, std::string text) {
             i += max(goodSuffixOffset, j - badCharOffset);
         }
     }
-
     return positions;
 }
