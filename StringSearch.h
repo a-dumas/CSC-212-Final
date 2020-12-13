@@ -21,4 +21,5 @@ private:
 public:
     std::vector<int> KMP(std::string wordInText, std::string text, std::string iterativeOrRecursive);
     std::vector<int> BM(std::string wordInText, std::string text);
+    std::vector<int> BF(std::string wordInText, std::string text);
 };
