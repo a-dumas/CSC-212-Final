@@ -52,10 +52,10 @@ int main(){
 
 
     std::string threeOrFour;
-    std::cout<<"Awesome! Enter '3' for the Knuth–Morris–Pratt algorithm and '4' for Boyer-Moore algorithm\n";
+    std::cout<<"Awesome! Enter '3' for the Knuth–Morris–Pratt algorithm,'4' for Boyer-Moore algorithm, or '0' for brute force.\n";
     std::cin>>threeOrFour;
-    while((threeOrFour != "3") && (threeOrFour != "4")){
-        std::cout<<"Incorrect input. Input was not '3' or '4'. Please try again:\n";
+    while((threeOrFour != "3") && (threeOrFour != "4")&& (threeOrFour != "0")){
+        std::cout<<"Incorrect input. Input was not '3', '4', or '0'. Please try again:\n";
         std::cin>>threeOrFour;
     }
     if(threeOrFour == "3"){
@@ -84,14 +84,27 @@ int main(){
         }
     }
     else if(threeOrFour == "4"){
-            //timer for .csv file
-            std::ofstream out;
-            out.open("BMoore_Pattern.csv",std::ios::app);
-            std::clock_t start;
+        //timer for .csv file
+        std::ofstream out;
+        out.open("BMoore_Pattern.csv",std::ios::app);
+        std::clock_t start;
 
-            start = std::clock();
-            //end of timer
+        start = std::clock();
+        //end of timer
         print = obj.BM(word,text);
+        out<<text.size()<<","<<(std::clock() - start ) / (double) CLOCKS_PER_SEC<<"\n";
+        out.close();
+    }
+
+    else if(threeOrFour == "0"){
+        //timer for .csv file
+        std::ofstream out;
+        out.open("bruteForce.csv",std::ios::app);
+        std::clock_t start;
+
+        start = std::clock();
+        //end of timer
+        print = obj.BF(word,text);
         out<<text.size()<<","<<(std::clock() - start ) / (double) CLOCKS_PER_SEC<<"\n";
         out.close();
     }

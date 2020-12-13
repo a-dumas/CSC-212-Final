@@ -3,29 +3,20 @@
 std::vector<int> Search::BF(std::string wordInText, std::string text){
     std::vector<int> positions;
 
-    int len_word = wordInText.length();
-    int len_text = text.length();
-    int i = 0;
+    int M = wordInText.size();
+    int N = text.size();
 
-    while(i <= len_text - len_word){
+    /* A loop to slide wordInText[] one by one */
+    for (int i = 0; i <= N - M; i++) {
         int j;
 
-        // for a current index of i, check if the pattern matches
-        for(j = 0; j < len_word; j++){
-            if(text[i + j] != wordInText[j]){
+        /* For current index i, check for wordInTexttern match */
+        for (j = 0; j < M; j++)
+            if (text[i + j] != wordInText[j])
                 break;
-            }
-        }
 
-        if(j == len_word){ //if we have a continuous match
+        if (j == M) // if wordInText[0...M-1] = text[i, i+1, ...i+M-1]
             positions.push_back(i);
-        }
-        else if(j == 0){
-            i += 1;
-        }
-        else{
-            i += j; //shifts pattern by j
-        }
     }
     return positions;
 }
