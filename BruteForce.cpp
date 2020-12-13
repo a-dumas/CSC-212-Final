@@ -5,9 +5,9 @@ std::vector<int> Search::BF(std::string wordInText, std::string text){
 
     int len_word = wordInText.length();
     int len_text = text.length();
+    int i = 0;
 
-    // a loop that will shift the pattern by one
-    for (int i = 0; i < len_text - len_word ; i++){
+    while(i <= len_text - len_word){
         int j;
 
         // for a current index of i, check if the pattern matches
@@ -17,8 +17,14 @@ std::vector<int> Search::BF(std::string wordInText, std::string text){
             }
         }
 
-        if(j == len_word){
+        if(j == len_word){ //if we have a continuous match
             positions.push_back(i);
+        }
+        else if(j == 0){
+            i += 1;
+        }
+        else{
+            i += j; //shifts pattern by j
         }
     }
     return positions;
