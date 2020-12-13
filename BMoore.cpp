@@ -1,4 +1,3 @@
-
 #include "StringSearch.h"
 
 // get the shift for good suffix rule
