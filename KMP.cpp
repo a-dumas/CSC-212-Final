@@ -97,7 +97,7 @@ void Search::KMPIterative(std::string wordInText, std::string text,int i, int j,
                 j = lpsVec[j - 1];
             }
             else{
-                i++;                            //if j didnt just start a new round, take it back a notch in lpsVec
+                i++;                            //Otherwise, increase 'i' by one to compare with j in the next iteration.
             }
         }
     }
