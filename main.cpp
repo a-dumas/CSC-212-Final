@@ -68,14 +68,32 @@ int main(){
             std::cin>>fiveOrSix;
         }
         if(fiveOrSix == "5"){
+            //timer for .csv file
+            std::ofstream out;
+            out.open("KMP_Pattern.csv",std::ios::app);
+            std::clock_t start;
+
+            start = std::clock();
+            //end of timer
             print = obj.KMP(word,text,"5");
+            out<<text.size()<<","<<(std::clock() - start ) / (double) CLOCKS_PER_SEC<<"\n";
+            out.close();
         }
         else if(fiveOrSix == "6"){
             print = obj.KMP(word,text,"6");
         }
     }
     else if(threeOrFour == "4"){
+            //timer for .csv file
+            std::ofstream out;
+            out.open("BMoore_Pattern.csv",std::ios::app);
+            std::clock_t start;
+
+            start = std::clock();
+            //end of timer
         print = obj.BM(word,text);
+        out<<text.size()<<","<<(std::clock() - start ) / (double) CLOCKS_PER_SEC<<"\n";
+        out.close();
     }
 
 
