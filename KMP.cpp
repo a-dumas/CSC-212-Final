@@ -24,12 +24,9 @@ void Search::getLPS(std::vector<int> &lpsVec, std::string wordInText){
             j++;
         }
     }
-    for (int i = 0; i < lpsVec.size(); i++) {
-        std::cout<<lpsVec[i]<<" ";
-    }
     return;
 }
-std::vector<int> Search::KMP(std::string wordInText, std::string text,std::string linearOrRecursive){
+std::vector<int> Search::KMP(std::string wordInText, std::string text,std::string iterativeOrRecursive){
     //This is the KMP helper function.
 
     std::vector<int> lpsVec(wordInText.size());
@@ -43,10 +40,10 @@ std::vector<int> Search::KMP(std::string wordInText, std::string text,std::strin
 
 
 
-    if(linearOrRecursive == "1"){
-        KMPLinear(wordInText,text,i,j,positions,lpsVec);
+    if(iterativeOrRecursive == "5"){
+        KMPIterative(wordInText,text,i,j,positions,lpsVec);
     }
-    else if(linearOrRecursive == "2"){
+    else if(iterativeOrRecursive == "6"){
         KMPRecursive(wordInText,text,i,j,positions,lpsVec);
     }
     return positions;
@@ -65,7 +62,7 @@ void Search::KMPRecursive(std::string wordInText, std::string text,int i, int j,
         j++;
         if(j == wordInText.size()){             //If j is the size of the word, that means the algorithm found the whole word.
             positions.push_back(i - j);         //We push back at index 'i'-'j' to show where the word starts.
-            j = lpsVec[j - 1];                  //Instead of setting j to zero, we set it back one in lpsVec which will then loop until there is a match or j = 0 on line 73.
+            j = lpsVec[j - 1];                  //Instead of setting j to zero, we set it back one in lpsVec which will then loop until there is a match or j = 0 on the else if.
         }
         KMPRecursive(wordInText,text,i,j,positions,lpsVec);
     }
@@ -83,7 +80,7 @@ void Search::KMPRecursive(std::string wordInText, std::string text,int i, int j,
 
 
 
-void Search::KMPLinear(std::string wordInText, std::string text,int i, int j, std::vector<int> &positions, std::vector<int> lpsVec){
+void Search::KMPIterative(std::string wordInText, std::string text,int i, int j, std::vector<int> &positions, std::vector<int> lpsVec){
     while (i < text.size()){                    //Checks to see if we have reached the end of the text.
         if (wordInText[j] == text[i]) {         //If character matches.
             j++;
@@ -91,7 +88,7 @@ void Search::KMPLinear(std::string wordInText, std::string text,int i, int j, st
 
             if (j == wordInText.size()){        //If j is the size of the word, that means the algorithm found the whole word.
                 positions.push_back(i - j);     //We push back at index 'i'-'j' to show where the word starts.
-                j = lpsVec[j - 1];              //Instead of setting j to zero, we set it back one in lpsVec which will then loop until there is a match or j = 0 on line 99.
+                j = lpsVec[j - 1];              //Instead of setting j to zero, we set it back one in lpsVec which will then loop until there is a match or j = 0 on te else if
             }
         }
 
