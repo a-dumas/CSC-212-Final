@@ -1,13 +1,12 @@
 
 #include "StringSearch.h"
-#include <algorithm>
 
 // get the shift for good suffix rule
 void Search::goodSuffix(std::string wordInText, std::vector<int>& shiftTable, std::vector<int>& borderTable) {
     int i = wordInText.length();
     int j = wordInText.length() + 1;
 
-    for (int i = 0; i < wordInText.length() + 1; i++) {
+    for (unsigned int k = 0; k < wordInText.length() + 1; k++) {
         shiftTable.push_back(0); // filling the shift table with all zero values
         borderTable.push_back(-1); // filling the border position table with -1
     }
@@ -51,11 +50,11 @@ std::vector<int> Search::badChar(std::string wordInText) { //we're only comparin
     std::vector<int> badCharTable;
     int size = 256; // number of possible ASCII values
 
-    for (int i = 0; i < 256; i++) {
+    for (int i = 0; i < size; i++) {
         badCharTable.push_back(-1); // filling the table with negative values that will be replaced later
     }
-    for (int i = 0; i < wordInText.length(); i++) {
-        badCharTable[(int)wordInText[i]] = i; // pushing the last occurance of a particular character in the patterm 
+    for (unsigned int i = 0; i < wordInText.length(); i++) {
+        badCharTable[(int)wordInText[i]] = i; // pushing the last occurance of a particular character in the patterm
     }
 
     return badCharTable;
@@ -72,8 +71,6 @@ std::vector<int> Search::BM(std::string wordInText, std::string text) {
     if (text.length() < wordInText.length()) {
         return positions;
     }
-
-    int mismatch = 0;
 
     //initializing vectors to hold shift values
     std::vector<int> badCharTable = badChar(wordInText);
@@ -99,7 +96,7 @@ std::vector<int> Search::BM(std::string wordInText, std::string text) {
         }
         else {
             int badCharOffset = badCharTable[text[i + j]];
-            int goodSuffixOffset = shiftTable[j + i];
+            int goodSuffixOffset = shiftTable[j + 1];
             // implement either the good suffix or bad character rule depending on which produces a larger shift
             i += max(goodSuffixOffset, j - badCharOffset);
         }
