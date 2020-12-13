@@ -14,7 +14,7 @@ private:
     void KMPRecursive(std::string wordInText, std::string text, int i, int j, std::vector<int>& positions, std::vector<int> lpsVec);
     void KMPiterative(std::string wordInText, std::string text, int i, int j, std::vector<int>& positions, std::vector<int> lpsVec);
     void getLPS(std::vector<int>& lpsVec, std::string wordInText);
-    std::vector<int> goodSuffix(std::string wordInText, std::vector<int>& shiftTable, std::vector<int>& borderTable);
+    void goodSuffix(std::string wordInText, std::vector<int>& shiftTable, std::vector<int>& borderTable);
     std::vector<int> badChar(std::string wordInText);
 
 
