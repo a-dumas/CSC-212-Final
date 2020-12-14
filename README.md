@@ -34,5 +34,8 @@ A [Knuth-Morris-Pratt](https://en.wikipedia.org/wiki/Knuth%E2%80%93Morris%E2%80%
     
   Follow the prompts in the command line to select what input type and which algorithm to use. The easy to read output file will bold every instance of the searched word, where the command line will output the index at which every match occurs.
 
-(put in image)
+![alt text](https://github.com/a-dumas/CSC-212-Final/blob/main/indexes%20output.PNG)
+![alt text](https://github.com/a-dumas/CSC-212-Final/blob/main/easy%20to%20read%20output.PNG)
+
+
  
