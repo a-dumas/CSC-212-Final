@@ -1,6 +1,6 @@
 ## CSC-212-Final
 
-A [Knuth-Morris-Pratt](https://en.wikipedia.org/wiki/Knuth%E2%80%93Morris%E2%80%93Pratt_algorithm) and [Boyer Moore] https://en.wikipedia.org/wiki/Boyer%E2%80%93Moore_string-search_algorithm) implementation in C++
+A [Knuth-Morris-Pratt](https://en.wikipedia.org/wiki/Knuth%E2%80%93Morris%E2%80%93Pratt_algorithm) and [Boyer Moore] (https://en.wikipedia.org/wiki/Boyer%E2%80%93Moore_string-search_algorithm) implementation in C++
 
 ## Knuth-Morris-Pratt
   
@@ -13,7 +13,7 @@ A [Knuth-Morris-Pratt](https://en.wikipedia.org/wiki/Knuth%E2%80%93Morris%E2%80%
   
   An actual shifting offset is determined by the `max` function
 
-  `badChar` will return a table populated with the leftmost value for any character in the string or -1 if the character is not present
+  `badChar` will return a vector populated with the leftmost value for any character in the string or -1 if the character is not present
   
   `goodSuffix` will not return a table, but instead it will speficy how far the current string position should shift to the right when the pattern [j - 1] does not match but the suffic at [j....pattern_length - 1] does match.
 
