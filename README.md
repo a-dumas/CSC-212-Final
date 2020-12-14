@@ -3,6 +3,7 @@
 A [Knuth-Morris-Pratt](https://en.wikipedia.org/wiki/Knuth%E2%80%93Morris%E2%80%93Pratt_algorithm) and [Boyer Moore](https://en.wikipedia.org/wiki/Boyer%E2%80%93Moore_string-search_algorithm) implementation in C++
 
 ## Knuth-Morris-Pratt
+This algorithm preprocresses the word/pattern into sub patterns. This is called the LPS (Longest Proper Prefix). `KMP` will call either `KMPIterative` or `KMPRecursive`. And either of those will call `LPS` to make the LPS vector. When its done, `KMP` returns a vector of the postions. 
   
 ## Boyer Moore
 
