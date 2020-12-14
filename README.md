@@ -1,5 +1,5 @@
 ## CSC-212-Final
-================
+
 A [Knuth-Morris-Pratt](https://en.wikipedia.org/wiki/Knuth%E2%80%93Morris%E2%80%93Pratt_algorithm) and [Boyer Moore] https://en.wikipedia.org/wiki/Boyer%E2%80%93Moore_string-search_algorithm) implementation in C++
 
 ## Knuth-Morris-Pratt
@@ -27,7 +27,7 @@ A [Knuth-Morris-Pratt](https://en.wikipedia.org/wiki/Knuth%E2%80%93Morris%E2%80%
     $g++ -std=c++11 -Wall main.cpp KMP.cpp Bmoore.cpp BruteForce.cpp -o main
     $./main
     
-  Follow the prompts in the command line to select what input type and which algorithm to use. The easy to read output file will bold every instance of the searched word, where the command line will output the index at which every full match occurs.
+  Follow the prompts in the command line to select what input type and which algorithm to use. The easy to read output file will bold every instance of the searched word, where the command line will output the index at which every match occurs.
 
 (put in image)
  
