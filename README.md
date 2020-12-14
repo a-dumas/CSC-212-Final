@@ -40,12 +40,14 @@ When its done, `KMP` returns a vector of the postions to the main function.
   Follow the prompts in the command line to select what input type and which algorithm to use. The easy to read output file will bold every instance of the searched word, where the command line will output the index at which every match occurs and a total number of matches.
 
 Positional output:
-
-   ![alt text](https://github.com/a-dumas/CSC-212-Final/blob/main/indexes%20output.PNG)
+  <p align="center">
+  <img width="700" height="75" src="https://github.com/a-dumas/CSC-212-Final/blob/main/indexes%20output.PNG">
+  </p>
 
 Easy to read output:
-
-   ![alt text](https://github.com/a-dumas/CSC-212-Final/blob/main/easy%20to%20read%20output.PNG)
+  <p align="center">
+  <img width="700" height="300" src="https://github.com/a-dumas/CSC-212-Final/blob/main/easy%20to%20read%20output.PNG">
+  </p>
 
 
  
