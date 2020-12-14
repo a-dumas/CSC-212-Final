@@ -3,7 +3,11 @@
 A [Knuth-Morris-Pratt](https://en.wikipedia.org/wiki/Knuth%E2%80%93Morris%E2%80%93Pratt_algorithm) and [Boyer Moore](https://en.wikipedia.org/wiki/Boyer%E2%80%93Moore_string-search_algorithm) implementation in C++
 
 ## Knuth-Morris-Pratt
-This algorithm preprocresses the word/pattern into sub patterns. This is called the LPS (Longest Proper Prefix). `KMP` will call either `KMPIterative` or `KMPRecursive`. And either of those will call `LPS` to make the LPS vector. When its done, `KMP` returns a vector of the postions. 
+This algorithm preprocresses the word/pattern into sub patterns. This is called the LPS (Longest Proper Prefix). 
+
+`KMP` will call either `KMPIterative` or `KMPRecursive`. And either of those will call `LPS` to make the LPS vector.
+
+When its done, `KMP` returns a vector of the postions to the main function. 
   
 ## Boyer Moore
 
@@ -18,7 +22,7 @@ This algorithm preprocresses the word/pattern into sub patterns. This is called 
   
   `goodSuffix` will not return a table, but instead it will speficy how far the current string position should shift to the right when the pattern [j - 1] does not match but the suffic at [j....pattern_length - 1] does match.
   
-  `BM` will complete the actual search using the above two functions
+  `BM` will complete the actual search using the above two functions and returns a vector of positions to the main function.
 
 ## Brute force
 
@@ -33,10 +37,15 @@ This algorithm preprocresses the word/pattern into sub patterns. This is called 
     $g++ -std=c++11 -Wall main.cpp KMP.cpp Bmoore.cpp BruteForce.cpp -o main
     $./main
     
-  Follow the prompts in the command line to select what input type and which algorithm to use. The easy to read output file will bold every instance of the searched word, where the command line will output the index at which every match occurs.
+  Follow the prompts in the command line to select what input type and which algorithm to use. The easy to read output file will bold every instance of the searched word, where the command line will output the index at which every match occurs and a total number of matches.
 
-![alt text](https://github.com/a-dumas/CSC-212-Final/blob/main/indexes%20output.PNG)
-![alt text](https://github.com/a-dumas/CSC-212-Final/blob/main/easy%20to%20read%20output.PNG)
+Positional output:
+
+   ![alt text](https://github.com/a-dumas/CSC-212-Final/blob/main/indexes%20output.PNG)
+
+Easy to read output:
+
+   ![alt text](https://github.com/a-dumas/CSC-212-Final/blob/main/easy%20to%20read%20output.PNG)
 
 
  
