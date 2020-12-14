@@ -1,6 +1,6 @@
 ## CSC-212-Final
 
-A [Knuth-Morris-Pratt](https://en.wikipedia.org/wiki/Knuth%E2%80%93Morris%E2%80%93Pratt_algorithm) and [Boyer Moore] (https://en.wikipedia.org/wiki/Boyer%E2%80%93Moore_string-search_algorithm) implementation in C++
+A [Knuth-Morris-Pratt](https://en.wikipedia.org/wiki/Knuth%E2%80%93Morris%E2%80%93Pratt_algorithm) and [Boyer Moore](https://en.wikipedia.org/wiki/Boyer%E2%80%93Moore_string-search_algorithm) implementation in C++
 
 ## Knuth-Morris-Pratt
   
