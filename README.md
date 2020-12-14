@@ -19,6 +19,9 @@ A [Knuth-Morris-Pratt](https://en.wikipedia.org/wiki/Knuth%E2%80%93Morris%E2%80%
   
   `BM` will complete the actual search using the above two functions
 
+## Brute force
+
+  This algorithm is used as a control for comparison purposes and is taken from [here](https://www.geeksforgeeks.org/naive-algorithm-for-pattern-searching/?ref=lbp). 
   
 ## Usage
 
