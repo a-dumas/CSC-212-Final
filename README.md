@@ -41,12 +41,12 @@ When its done, `KMP` returns a vector of the postions to the main function.
 
 Positional output:
   <p align="center">
-  <img width="700" height="75" src="https://github.com/a-dumas/CSC-212-Final/blob/main/indexes%20output.PNG">
+  <img width="700" height="75" src="https://github.com/a-dumas/CSC-212-Final/blob/main/images/indexes%20output.png?raw=true">
   </p>
 
 Easy to read output:
   <p align="center">
-  <img width="700" height="300" src="https://github.com/a-dumas/CSC-212-Final/blob/main/easy%20to%20read%20output.PNG">
+  <img width="700" height="300" src="https://github.com/a-dumas/CSC-212-Final/blob/main/images/easy%20to%20read%20output.png?raw=true">
   </p>
 
 
