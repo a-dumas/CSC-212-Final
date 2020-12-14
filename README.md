@@ -16,6 +16,8 @@ A [Knuth-Morris-Pratt](https://en.wikipedia.org/wiki/Knuth%E2%80%93Morris%E2%80%
   `badChar` will return a vector populated with the leftmost value for any character in the string or -1 if the character is not present
   
   `goodSuffix` will not return a table, but instead it will speficy how far the current string position should shift to the right when the pattern [j - 1] does not match but the suffic at [j....pattern_length - 1] does match.
+  
+  `BM` will complete the actual search using the above two functions
 
   
 ## Usage
