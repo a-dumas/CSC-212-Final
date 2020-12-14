@@ -11,11 +11,11 @@ A [Knuth-Morris-Pratt](https://en.wikipedia.org/wiki/Knuth%E2%80%93Morris%E2%80%
   1. The bad character rule
   2. The good suffix rule
   
-  An actual shifting offset is determined by the 'max' function
+  An actual shifting offset is determined by the `max` function
 
-  'badChar' will return a table populated with the leftmost value for any character in the string or -1 if the character is not present
+  `badChar` will return a table populated with the leftmost value for any character in the string or -1 if the character is not present
   
-  'goodSuffix' will not return a table, but instead it will speficy how far the current string position should shift to the right when the pattern [j - 1] does not match but the suffic at [j....pattern_length - 1] does match.
+  `goodSuffix` will not return a table, but instead it will speficy how far the current string position should shift to the right when the pattern [j - 1] does not match but the suffic at [j....pattern_length - 1] does match.
 
   
 ## Usage
